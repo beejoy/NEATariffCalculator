@@ -11,13 +11,7 @@ namespace NEATariff
 
     public class Tariff
     {
-        // tariff for 5 Ampere consumers
-        private double[,] tariff5amp = new double[,] { { 30.0, 3.0 }, { 50.0, 7.0 }, { 75.0, 8.5 }, { 100.0, 10.0 }, { 125.0, 11.0 }, { 150.0, 12.0 }, { 175.0, 13.0 } };
-
-        // tariff for 15 Ampere consumers
-        private double[,] tariff15amp = new double[,] { { 50.0, 4.0 }, { 75.0, 7.0 }, { 100.0, 8.5 }, { 125.0, 10.0 }, { 150.0, 11.0 }, { 175.0, 12.0 }, { 200.0, 13.0 } };
-
-        // service charge
+        // service charge (update as per NEA rates)
         private double[,] serviceCharge = new double[,]
         {
             { 30, 50 },
@@ -29,7 +23,7 @@ namespace NEATariff
             { 175, 200 }
         };
 
-        // energy charge
+        // energy charge (update as per NEA rates)
         private double[,] energyCharge = new double[,]
         {
             { 3.0, 4.0 },
