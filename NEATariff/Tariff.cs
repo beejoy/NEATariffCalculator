@@ -6,7 +6,9 @@ namespace NEATariff
     public enum AmpereEnum
     {
         Ampere5,
-        Ampere15
+        Ampere15,
+        Ampere30,
+        Ampere60
     }
 
     public class Tariff
@@ -14,29 +16,29 @@ namespace NEATariff
         // service charge (update as per NEA rates)
         private double[,] serviceCharge = new double[,]
         {
-            { 30, 50 },
-            { 30, 50 },
-            { 50, 75 },
-            { 50, 75 },
-            { 75, 100 },
-            { 100, 125 },
-            { 125, 150 },
-            { 150, 175 },
-            { 175, 200 }
+            { 30, 50, 75, 125 },
+            { 30, 50, 75, 125 },
+            { 50, 75, 100, 125 },
+            { 50, 75, 100, 125 },
+            { 75, 100, 125, 150 },
+            { 100, 125, 150, 200 },
+            { 125, 150, 175, 200 },
+            { 150, 175, 200, 250 },
+            { 175, 200, 225, 275 }
         };
 
         // energy charge (update as per NEA rates)
         private double[,] energyCharge = new double[,]
         {
-            { 0.0, 4.0 },
-            { 3.0, 4.0 },
-            { 6.5, 6.5 },
-            { 8.0, 8.0 },
-            { 9.5, 9.5 },
-            { 9.5, 9.5 },
-            { 10.0, 10.0 },
-            { 11.0, 11.0 },
-            { 12.0, 12.0 }
+            { 0.0, 4.0, 5.0, 6.0 },
+            { 3.0, 4.0, 5.0, 6.0 },
+            { 6.5, 6.5, 6.5, 6.5 },
+            { 8.0, 8.0, 8.0, 8.0 },
+            { 9.5, 9.5, 9.5, 9.5 },
+            { 9.5, 9.5, 9.5, 9.5 },
+            { 10.0, 10.0, 10.0, 10.0 },
+            { 11.0, 11.0, 11.0, 11.0 },
+            { 12.0, 12.0, 12.0, 12.0 }
         };
 
         public int PreviousReading { get; set; }
@@ -158,7 +160,7 @@ namespace NEATariff
                     unitSlots.Add(consumedUnits - 250);
                 }
 
-                // consumed unit slot 7
+                // consumed unit slot 9
                 if (consumedUnits > 400)
                 {
                     unitSlots.Add(consumedUnits - 400);

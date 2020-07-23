@@ -15,26 +15,51 @@ namespace NEATariffCalcConsole
                 Console.WriteLine("-----------------------------------------------");
                 Console.WriteLine("");
 
-                Console.Write("Enter Previous Reading: ");
-                int prevReading = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("Enter Current Reading: ");
-                int currentReading = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine($"Total consumed energy units: {currentReading - prevReading}");
-
-                Console.Write("Enter Energy Ampere (0 = 5 Ampere; 1 = 15 Ampere): ");
-                int ampere = Convert.ToInt32(Console.ReadLine());
-
-                myTariff.PreviousReading = prevReading;
-                myTariff.CurrentReading = currentReading;
-                if (ampere < 0 || ampere > 1)
+                try
                 {
-                    ampere = 0;
-                }
-                myTariff.Ampere = (AmpereEnum)ampere;
+                    int prevReading = 0;
+                    Console.Write("Enter Previous Reading: ");
+                    prevReading = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine($"Total Bill Amount: Rs. {myTariff.CalculateTariff():N2}");
+                    int currentReading = 0;
+                    Console.Write("Enter Current Reading: ");
+                    currentReading = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine($"Total consumed energy units: {currentReading - prevReading}");
+
+                    Console.Write("Enter Energy Ampere ([0] = 5A; 1 = 15A; 2 = 30A; 3 = 60A): ");
+                    int ampere;
+                    try
+                    {
+                        ampere = Convert.ToInt32(Console.ReadLine());
+                    }
+                    catch (FormatException)
+                    {
+                        // Default Ampere is 5A
+                        ampere = 0;
+                    }
+
+                    myTariff.PreviousReading = prevReading;
+                    myTariff.CurrentReading = currentReading;
+                    if (ampere < 0 || ampere > 3)
+                    {
+                        ampere = 0;
+                    }
+                    myTariff.Ampere = (AmpereEnum)ampere;
+
+                    try
+                    {
+                        Console.WriteLine($"Total Bill Amount: Rs. {myTariff.CalculateTariff():N2}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Please, enter correct numerical values for calculation.");
+                }
 
                 Console.WriteLine("============================================");
                 Console.WriteLine("Press 'q' to quit, any other key to continue.");

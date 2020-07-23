@@ -29,13 +29,32 @@ namespace NEATariffWinForm
                 txtCurrentReading.Text = currentReading.ToString();
             }
 
-            if (rad15A.Checked)
+            switch (cboTariff.SelectedIndex)
             {
-                ampere = AmpereEnum.Ampere15;
+                case 0:
+                    ampere = AmpereEnum.Ampere5;
+                    break;
+
+                case 1:
+                    ampere = AmpereEnum.Ampere15;
+                    break;
+
+                case 2:
+                    ampere = AmpereEnum.Ampere30;
+                    break;
+
+                case 3:
+                    ampere = AmpereEnum.Ampere60;
+                    break;
             }
 
             Tariff myTariff = new Tariff(prevReading, currentReading, ampere);
             txtTariff.Text = $"{myTariff.CalculateTariff():C2}";
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            cboTariff.SelectedIndex = 0;
         }
     }
 }
