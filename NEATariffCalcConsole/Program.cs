@@ -21,6 +21,8 @@ namespace NEATariffCalcConsole
                 Console.Write("Enter Current Reading: ");
                 int currentReading = Convert.ToInt32(Console.ReadLine());
 
+                Console.WriteLine($"Total consumed energy units: {currentReading - prevReading}");
+
                 Console.Write("Enter Energy Ampere (0 = 5 Ampere; 1 = 15 Ampere): ");
                 int ampere = Convert.ToInt32(Console.ReadLine());
 
@@ -32,7 +34,7 @@ namespace NEATariffCalcConsole
                 }
                 myTariff.Ampere = (AmpereEnum)ampere;
 
-                Console.WriteLine($"Your tariff is {myTariff.CalculateTariff()}.");
+                Console.WriteLine($"Total Bill Amount: Rs. {myTariff.CalculateTariff():N2}");
 
                 Console.WriteLine("============================================");
                 Console.WriteLine("Press 'q' to quit, any other key to continue.");

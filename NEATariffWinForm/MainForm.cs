@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NEATariff;
 
@@ -40,9 +33,9 @@ namespace NEATariffWinForm
             {
                 ampere = AmpereEnum.Ampere15;
             }
-            
+
             Tariff myTariff = new Tariff(prevReading, currentReading, ampere);
-            txtTariff.Text = myTariff.CalculateTariff().ToString();
+            txtTariff.Text = $"{myTariff.CalculateTariff():C2}";
         }
     }
 }

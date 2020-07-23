@@ -43,7 +43,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 51);
+            this.label1.Location = new System.Drawing.Point(65, 51);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 21);
@@ -53,7 +53,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 88);
+            this.label2.Location = new System.Drawing.Point(65, 88);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 21);
@@ -63,7 +63,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 124);
+            this.label3.Location = new System.Drawing.Point(65, 124);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 21);
@@ -73,7 +73,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(53, 158);
+            this.label4.Location = new System.Drawing.Point(65, 158);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 21);
@@ -82,7 +82,7 @@
             // 
             // txtPrevReading
             // 
-            this.txtPrevReading.Location = new System.Drawing.Point(185, 47);
+            this.txtPrevReading.Location = new System.Drawing.Point(212, 46);
             this.txtPrevReading.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrevReading.Name = "txtPrevReading";
             this.txtPrevReading.Size = new System.Drawing.Size(127, 29);
@@ -91,7 +91,7 @@
             // 
             // txtCurrentReading
             // 
-            this.txtCurrentReading.Location = new System.Drawing.Point(185, 84);
+            this.txtCurrentReading.Location = new System.Drawing.Point(212, 83);
             this.txtCurrentReading.Margin = new System.Windows.Forms.Padding(4);
             this.txtCurrentReading.Name = "txtCurrentReading";
             this.txtCurrentReading.Size = new System.Drawing.Size(127, 29);
@@ -100,8 +100,9 @@
             // 
             // txtTariff
             // 
+            this.txtTariff.BackColor = System.Drawing.Color.White;
             this.txtTariff.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtTariff.Location = new System.Drawing.Point(185, 154);
+            this.txtTariff.Location = new System.Drawing.Point(212, 153);
             this.txtTariff.Margin = new System.Windows.Forms.Padding(4);
             this.txtTariff.Name = "txtTariff";
             this.txtTariff.ReadOnly = true;
@@ -114,7 +115,7 @@
             // 
             this.rad5A.AutoSize = true;
             this.rad5A.Checked = true;
-            this.rad5A.Location = new System.Drawing.Point(185, 121);
+            this.rad5A.Location = new System.Drawing.Point(212, 122);
             this.rad5A.Margin = new System.Windows.Forms.Padding(4);
             this.rad5A.Name = "rad5A";
             this.rad5A.Size = new System.Drawing.Size(47, 25);
@@ -126,7 +127,7 @@
             // rad15A
             // 
             this.rad15A.AutoSize = true;
-            this.rad15A.Location = new System.Drawing.Point(256, 121);
+            this.rad15A.Location = new System.Drawing.Point(283, 120);
             this.rad15A.Margin = new System.Windows.Forms.Padding(4);
             this.rad15A.Name = "rad15A";
             this.rad15A.Size = new System.Drawing.Size(56, 25);
@@ -136,19 +137,21 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(185, 202);
+            this.btnCalculate.BackColor = System.Drawing.Color.Orange;
+            this.btnCalculate.ForeColor = System.Drawing.Color.White;
+            this.btnCalculate.Location = new System.Drawing.Point(212, 201);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(127, 44);
             this.btnCalculate.TabIndex = 9;
             this.btnCalculate.Text = "Calculate";
-            this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.UseVisualStyleBackColor = false;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 296);
+            this.ClientSize = new System.Drawing.Size(405, 296);
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.rad15A);
             this.Controls.Add(this.rad5A);
@@ -163,6 +166,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nepal Electricity Authoriy - Tariff Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();

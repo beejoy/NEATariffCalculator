@@ -15,6 +15,8 @@ namespace NEATariff
         private double[,] serviceCharge = new double[,]
         {
             { 30, 50 },
+            { 30, 50 },
+            { 50, 75 },
             { 50, 75 },
             { 75, 100 },
             { 100, 125 },
@@ -26,13 +28,15 @@ namespace NEATariff
         // energy charge (update as per NEA rates)
         private double[,] energyCharge = new double[,]
         {
+            { 0.0, 4.0 },
             { 3.0, 4.0 },
-            { 7.0, 7.0 },
-            { 8.5, 8.5 },
+            { 6.5, 6.5 },
+            { 8.0, 8.0 },
+            { 9.5, 9.5 },
+            { 9.5, 9.5 },
             { 10.0, 10.0 },
             { 11.0, 11.0 },
-            { 12.0, 12.0 },
-            { 13.0, 13.0 }
+            { 12.0, 12.0 }
         };
 
         public int PreviousReading { get; set; }
@@ -75,16 +79,26 @@ namespace NEATariff
             if (consumedUnits > 0)
             {
                 // consumed unit slot 1
-                if (consumedUnits > 20)
+                if (consumedUnits > 10)
                 {
-                    unitSlots.Add(20);
+                    unitSlots.Add(10);
                 }
                 else
                 {
                     unitSlots.Add(consumedUnits);
                 }
 
-                // consumed unit slot 2
+                // consumed unti slot 2
+                if (consumedUnits > 20)
+                {
+                    unitSlots.Add(10);
+                }
+                else if (consumedUnits > 10)
+                {
+                    unitSlots.Add(consumedUnits - 10);
+                }
+
+                // consumed unit slot 3
                 if (consumedUnits > 30)
                 {
                     unitSlots.Add(10);
@@ -94,7 +108,7 @@ namespace NEATariff
                     unitSlots.Add(consumedUnits - 20);
                 }
 
-                // consumed unit slot 3
+                // consumed unit slot 4
                 if (consumedUnits > 50)
                 {
                     unitSlots.Add(20);
@@ -104,17 +118,27 @@ namespace NEATariff
                     unitSlots.Add(consumedUnits - 30);
                 }
 
-                // consumed unit slot 4
-                if (consumedUnits > 150)
+                // consumed unit slot 5
+                if (consumedUnits > 100)
                 {
-                    unitSlots.Add(100);
+                    unitSlots.Add(50);
                 }
                 else if (consumedUnits > 50)
                 {
                     unitSlots.Add(consumedUnits - 50);
                 }
 
-                // consumed unit slot 5
+                // consumed unit slot 6
+                if (consumedUnits > 150)
+                {
+                    unitSlots.Add(50);
+                }
+                else if (consumedUnits > 100)
+                {
+                    unitSlots.Add(consumedUnits - 100);
+                }
+
+                // consumed unit slot 7
                 if (consumedUnits > 250)
                 {
                     unitSlots.Add(100);
@@ -124,7 +148,7 @@ namespace NEATariff
                     unitSlots.Add(consumedUnits - 150);
                 }
 
-                // consumed unit slot 6
+                // consumed unit slot 8
                 if (consumedUnits > 400)
                 {
                     unitSlots.Add(150);
