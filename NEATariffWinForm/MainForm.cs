@@ -17,8 +17,6 @@ namespace NEATariffWinForm
 
             int prevReading = Convert.ToInt32(txtPrevReading.Text);
             int currentReading = Convert.ToInt32(txtCurrentReading.Text);
-            AmpereEnum ampere = AmpereEnum.Ampere5;
-
             if (prevReading > currentReading)
             {
                 int temp = currentReading;
@@ -29,32 +27,15 @@ namespace NEATariffWinForm
                 txtCurrentReading.Text = currentReading.ToString();
             }
 
-            switch (cboTariff.SelectedIndex)
-            {
-                case 0:
-                    ampere = AmpereEnum.Ampere5;
-                    break;
+            txtConsumedUnits.Text = (currentReading - prevReading).ToString();
 
-                case 1:
-                    ampere = AmpereEnum.Ampere15;
-                    break;
-
-                case 2:
-                    ampere = AmpereEnum.Ampere30;
-                    break;
-
-                case 3:
-                    ampere = AmpereEnum.Ampere60;
-                    break;
-            }
-
-            Tariff myTariff = new Tariff(prevReading, currentReading, ampere);
+            Tariff myTariff = new Tariff(prevReading, currentReading, (AmpereEnum)cboAmpere.SelectedIndex);
             txtTariff.Text = $"{myTariff.CalculateTariff():C2}";
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            cboTariff.SelectedIndex = 0;
+            cboAmpere.SelectedIndex = 0;
         }
     }
 }

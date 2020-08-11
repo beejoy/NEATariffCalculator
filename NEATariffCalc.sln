@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NEATariffWinForm", "NEATari
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NEATariffAndroid", "NEATariffAndroid\NEATariffAndroid.csproj", "{9D0B4478-3DC4-43AD-A916-BEFDCDD82952}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NEATariffCalcWPF", "NEATariffCalcWPF\NEATariffCalcWPF.csproj", "{D49481B7-3BB9-4D50-9F0C-A29529A01836}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{9D0B4478-3DC4-43AD-A916-BEFDCDD82952}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D0B4478-3DC4-43AD-A916-BEFDCDD82952}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9D0B4478-3DC4-43AD-A916-BEFDCDD82952}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D49481B7-3BB9-4D50-9F0C-A29529A01836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D49481B7-3BB9-4D50-9F0C-A29529A01836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D49481B7-3BB9-4D50-9F0C-A29529A01836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D49481B7-3BB9-4D50-9F0C-A29529A01836}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
